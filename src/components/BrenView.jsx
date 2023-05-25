@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableHighlight, StyleSheet } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faUsers, faComments, faBoxesStacked, faFileInvoiceDollar,faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faAddressBook, faUsers, faComments, faBoxesStacked, faFileInvoiceDollar,faChartLine } from '@fortawesome/free-solid-svg-icons';
 
 export default function BrenView({ navigation }) {
     return (
@@ -9,21 +9,21 @@ export default function BrenView({ navigation }) {
             <View style={styles.row}>
                 <TouchableHighlight
                     
-                    style={[styles.box, { backgroundColor: '#0099E9' }]}
+                    style={[styles.box, { backgroundColor: '#1AA8F3' }]}
                     onPress={() => navigation.navigate('Contactos')}
                 >
                     <View style={styles.iconContainer}>
-                        <FontAwesomeIcon icon={faUsers} size={46} color="white" style={styles.icon} />
-                        <Text style={styles.text}>Contactos</Text>
+                        <FontAwesomeIcon icon={faAddressBook} size={46} color="white" style={styles.icon} />
+                        <Text style={styles.text}>Agenda</Text>
                     </View>
                 </TouchableHighlight>
                 <TouchableHighlight
-                    style={[styles.box, { backgroundColor: 'green' }]}
-                    onPress={() => navigation.navigate('ListaDifusion')}
+                    style={[styles.box, { backgroundColor: '#0020FF' }]}
+                    onPress={() => navigation.navigate('GruposContactos')}
                 >
                     <View style={styles.iconContainer} >
-                        <FontAwesomeIcon icon={faComments} size={46} color="white" style={styles.icon} />
-                        <Text style={styles.text}>Lista Difusión</Text>
+                        <FontAwesomeIcon icon={faUsers} size={46} color="white" style={styles.icon} />
+                        <Text style={styles.text}>Grupos Contactos</Text>
                     </View>
                 </TouchableHighlight>
             </View>
@@ -58,6 +58,15 @@ export default function BrenView({ navigation }) {
                     <View style={styles.iconContainer}>
                         <FontAwesomeIcon icon={faChartLine} size={46} color="white" style={styles.icon} />
                         <Text style={styles.text}>Estadisticas</Text>
+                    </View>
+                </TouchableHighlight>
+                <TouchableHighlight
+                    style={[styles.box, { backgroundColor: 'green' }]}
+                    onPress={() => navigation.navigate('ListaDifusion')}
+                >
+                    <View style={styles.iconContainer} >
+                        <FontAwesomeIcon icon={faComments} size={46} color="white" style={styles.icon} />
+                        <Text style={styles.text}>Lista Difusión</Text>
                     </View>
                 </TouchableHighlight>
             </View>

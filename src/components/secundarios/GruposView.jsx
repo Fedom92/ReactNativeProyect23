@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text } from 'react-native';
 
-const InventarioView = () => {
+const GruposView = () => {
   const [estado, setEstado] = useState('');
 
   useEffect(() => {
@@ -10,10 +10,10 @@ const InventarioView = () => {
 
   return (
     <View>
-      <Text>Inventario View</Text>
+      <Text>Grupos View</Text>
       {/* Resto del contenido de la vista */}
     </View>
   );
 };
 
-export default InventarioView;
+export default GruposView;
