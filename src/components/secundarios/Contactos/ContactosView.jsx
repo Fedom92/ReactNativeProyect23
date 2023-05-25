@@ -33,7 +33,7 @@ const ContactosView = () => {
   const renderContacto = ({ item }) => (
     <TouchableOpacity
       onPress={() => abrirEditarContacto(item)}
-      onLongPress={() => {setLongPressActive(true); seleccionarContacto(item)}}
+      onLongPress={() => { setLongPressActive(true); seleccionarContacto(item) }}
       style={styles.contactoCard}
     >
       {longPressActive && (
@@ -78,11 +78,17 @@ const ContactosView = () => {
       setLongPressActive(false);
       setSelectedContactos([]);
     }
-  
+
   };
 
   const isSelectedContacto = (contacto) => {
     return selectedContactos.some((item) => item.id === contacto.id);
+  };
+
+  const deleteContacto = async (id) => {
+    const contactoDoc = doc(db, "contactos", id);
+    await deleteDoc(contactoDoc);
+    setContactos((prevContactos) => prevContactos.filter((contacto) => contacto.id !== id));
   };
 
   return (
